@@ -6,12 +6,11 @@ const lessonIds = subtopics.map(section => section.id);
 const questions = [...document.querySelectorAll('.quiz-question')];
 const progressStatus = document.querySelector('#progress-status');
 const storageNote = document.querySelector('#storage-note');
-const storageFailed = 'Подтема отмечается, когда вы дочитали её до конца. Браузер не дал сохранить прогресс: отметки и результат теста действуют до перезагрузки страницы.';
 let saved = { lessons: [], quiz: null };
 try {
   saved = readSaved(localStorage.getItem(STORAGE_KEY), lessonIds, questions.length);
 } catch {
-  storageNote.textContent = storageFailed;
+  storageNote.hidden = false;
 }
 const completed = new Set();
 
@@ -19,7 +18,7 @@ function save() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ lessons: [...completed], quiz: saved.quiz }));
   } catch {
-    storageNote.textContent = storageFailed;
+    storageNote.hidden = false;
   }
 }
 
@@ -151,6 +150,15 @@ const illustrations = new IntersectionObserver(entries => {
 for (const figure of document.querySelectorAll('.course-art')) {
   illustrations.observe(figure.querySelector('.art-panel') || figure);
 }
+// Пара «ошибка → исправление» анимируется, только когда обе её фразы целиком на экране:
+// так зачёркивание и подсветка идут вместе, даже если на узком экране фразы далеко друг от друга.
+const pairs = [...document.querySelectorAll('.review-hunk, .compare')];
+const shown = new Set();
+const pairMarks = new IntersectionObserver(entries => {
+  for (const entry of entries) shown[entry.isIntersecting ? 'add' : 'delete'](entry.target);
+  for (const pair of pairs) pair.classList.toggle('is-visible', [...pair.querySelectorAll('mark')].every(mark => shown.has(mark)));
+}, { threshold: 1 });
+for (const pair of pairs) for (const mark of pair.querySelectorAll('mark')) pairMarks.observe(mark);
 page.classList.toggle('motion-background', document.hidden);
 document.addEventListener('visibilitychange', () => {
   page.classList.toggle('motion-background', document.hidden);
@@ -164,7 +172,6 @@ const scenes = [...document.querySelectorAll('.scroll-scene')].map(figure => ({
   steps: [...figure.querySelectorAll('.scene-step')],
   continuous: figure.classList.contains('continuous-scene'),
 }));
-const motions = [...document.querySelectorAll('[data-motion]')];
 let sceneFrame = 0;
 let lastScrollY = scrollY;
 let lastScrollTime = 0;
@@ -250,16 +257,8 @@ function updateScenes() {
     const wide = area.top < innerHeight / 4 - margin && area.bottom > innerHeight * 3 / 4 + margin;
     return { scene, progress, wide, bleed: { left: column.left, right: page.clientWidth - column.right } };
   });
-  const motionUpdates = motions.filter(figure => figure.classList.contains('is-visible')).map(figure => {
-    const hero = figure.dataset.motion === 'hero';
-    const bounds = (hero ? figure.closest('.hero') : figure).getBoundingClientRect();
-    const progress = hero ? -bounds.top / (bounds.height * 0.65)
-      : (innerHeight * 0.85 - bounds.top) / (bounds.height * 0.8);
-    return { figure, progress: Math.max(0, Math.min(1, progress)) };
-  });
   for (const { figure } of scenes) if (!figure.classList.contains('is-visible')) setWide(figure, false);
   for (const { scene, progress, wide, bleed } of updates) setScene(scene, progress, wide, bleed);
-  for (const { figure, progress } of motionUpdates) setFrame(figure, '--motion-progress', Math.round(progress));
 }
 
 // Оглавление отмечает последнюю главу, начавшуюся выше линии на трети экрана

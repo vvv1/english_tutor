@@ -34,41 +34,32 @@
       <div class="hero-intro">
         <div class="hero-aside">
           <p class="hero-audience">Сейчас доступна первая тема — <span lang="en">Conditionals</span>: пять подтем, от нулевого типа до смешанного.</p>
-          <a class="next-link" href="#conditionals">Начать курс <span aria-hidden="true">→</span></a>
+          <a class="next-link" href="./"><span aria-hidden="true">←</span> Вернуться на главную</a>
         </div>
       </div>
-      <div class="hero-art course-art" data-motion="hero">
-        <svg viewBox="0 0 1200 236" aria-hidden="true" focusable="false">
-          <path class="hero-track" d="M172 124H1040"/>
-          <g class="hero-entry">
-            <rect class="art-yellow" x="0" y="24" width="224" height="192"/>
-            <text class="hero-svg-label" x="20" y="53">УСЛОВИЕ</text>
-            <g class="hero-row"><rect x="20" y="74" width="184" height="34"/><text x="34" y="96">if it fails</text></g>
-            <g class="hero-row"><rect x="20" y="119" width="184" height="34"/><text x="34" y="141">when it's ready</text></g>
-            <g class="hero-row"><rect x="20" y="164" width="184" height="34"/><text x="34" y="186">until it passes</text></g>
-          </g>
-          <g class="hero-redundant">
-            <circle class="art-red" cx="462" cy="124" r="88"/>
-            <text class="hero-svg-light hero-will" x="462" y="124" text-anchor="middle">will</text>
-            <path class="art-white-line" d="M418 114h88"/>
-            <text class="hero-svg-light" x="462" y="168" text-anchor="middle">Лишнее</text>
-          </g>
-          <g class="hero-entry" style="--entry-delay: 100ms">
-            <path class="art-blue" d="M666 216V112a88 88 0 0 1 176 0v104Z"/>
-            <text class="hero-code" x="754" y="120" text-anchor="middle">will + V</text>
-            <text class="hero-svg-light" x="754" y="174" text-anchor="middle">Следствие</text>
-          </g>
-          <g class="hero-entry" style="--entry-delay: 200ms">
-            <path class="art-paper" d="M1036 36h162v180h-162Z"/>
-            <text class="hero-code hero-code--card" x="1117" y="96" text-anchor="middle">if it fails,</text>
-            <text class="hero-code hero-code--card" x="1117" y="122" text-anchor="middle">we'll roll back</text>
-            <text class="hero-svg-label" x="1117" y="184" text-anchor="middle">ВЕРНО</text>
-          </g>
-          <path class="art-line" d="m636 114 10 10-10 10m370-20 10 10-10 10"/>
-          <circle class="art-yellow" cx="869" cy="42" r="12"/>
-        </svg>
-        <div class="hero-art-caption"><strong>«Если сборка упадёт» —<br><span lang="en">if the build fails.</span></strong><p>Условная схема: русское будущее время в условии не переносится в английский. После <span lang="en">if, when, until</span> лишнее <span lang="en">will</span> уходит — оно остаётся только в следствии.</p></div>
-      </div>
+      <figure class="hero-art">
+        <div class="review">
+          <p class="review-bar"><span lang="en">review · postmortem.md</span><span class="review-shapes" aria-hidden="true"><i></i><i></i><i></i></span></p>
+          <div class="review-hunks">
+            <div class="review-hunk">
+              <a class="review-head" href="#cond-first">@@ <span lang="en">First</span> @@</a>
+              <p class="review-del" lang="en"><span class="visually-hidden" lang="ru">Ошибка: </span>If the build <mark>will fail</mark>, we'll roll back the release.</p>
+              <p class="review-add" lang="en"><span class="visually-hidden" lang="ru">Верно: </span>If the build <mark>fails</mark>, we'll roll back the release.</p>
+            </div>
+            <div class="review-hunk">
+              <a class="review-head" href="#cond-second">@@ <span lang="en">Second</span> @@</a>
+              <p class="review-del" lang="en"><span class="visually-hidden" lang="ru">Ошибка: </span>If we <mark>would have</mark> more data, the model would be more accurate.</p>
+              <p class="review-add" lang="en"><span class="visually-hidden" lang="ru">Верно: </span>If we <mark>had</mark> more data, the model would be more accurate.</p>
+            </div>
+            <div class="review-hunk">
+              <a class="review-head" href="#cond-third">@@ <span lang="en">Third</span> @@</a>
+              <p class="review-del" lang="en"><span class="visually-hidden" lang="ru">Ошибка: </span>If we <mark>would have tested</mark> the migration, we wouldn't have lost the data.</p>
+              <p class="review-add" lang="en"><span class="visually-hidden" lang="ru">Верно: </span>If we <mark>had tested</mark> the migration, we wouldn't have lost the data.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption class="hero-art-caption"><strong>«Если сборка упадёт» —<br><span lang="en">if the build fails.</span></strong><p>Главная ошибка темы — перенести в <span lang="en">if</span>-часть русское будущее время или «бы». В условии <span lang="en">will</span> и <span lang="en">would</span> почти никогда не нужны: время там сдвигается назад — <span lang="en">fails, had, had tested</span>. Они остаются в главной части.</p></figcaption>
+      </figure>
     </div>
   </header>
   <div class="course-layout">
@@ -76,7 +67,7 @@
       <noscript><p>Без JavaScript доступны все тексты и схемы. Отметки прочитанного и тест недоступны.</p></noscript>
       <div id="reading-progress" hidden>
         <p id="progress-status" role="status">Прочитано подтем: 0 из 5.</p>
-        <p id="storage-note">Подтема отмечается, когда вы дочитали её до конца. Отметки хранятся в этом браузере.</p>
+        <p id="storage-note" hidden>Браузер не дал сохранить прогресс: отметки и результат теста действуют до перезагрузки страницы.</p>
       </div>
       <nav aria-label="Оглавление курса">
         <h2>Оглавление</h2>

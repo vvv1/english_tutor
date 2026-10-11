@@ -113,15 +113,45 @@ h1 {
 .hero-art .hero-art-caption { display: flex; justify-content: space-between; align-items: center; gap: 3rem; margin-top: 0.9rem; border-top: 1px solid var(--ink); padding-top: 1rem; }
 .hero-art-caption strong { font-size: 1.3rem; line-height: 1.25; letter-spacing: -0.02em; }
 .hero-art-caption p { max-width: 56ch; margin: 0; color: var(--muted); font-size: 0.9375rem; }
-.hero-track { fill: none; stroke: var(--ink); stroke-width: 2; }
-.hero-redundant { opacity: 0; }
-.hero-row rect { fill: var(--surface); stroke: var(--ink); }
-.hero-row text { fill: var(--ink); font: 15px var(--font-mono); }
-.hero-svg-label { fill: var(--ink); font: 700 16px var(--font-text); letter-spacing: 1px; }
-.hero-svg-light { fill: var(--surface); font: 18px var(--font-text); }
-.hero-will { font: 700 44px var(--font-mono); }
-.hero-code { fill: var(--surface); font: 700 22px var(--font-mono); }
-.hero-code--card { fill: var(--blue); font-size: 14px; }
+
+/* Обложка курса: карточка код-ревью, каждая правка убирает will/would из if-части. */
+.review { border: 2px solid var(--ink); background: var(--surface); }
+.review-bar { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 0.6rem 1rem; color: var(--surface); background: var(--ink); font: 0.875rem var(--font-mono); }
+.review-shapes { display: flex; gap: 0.5rem; }
+.review-shapes i { width: 0.9rem; height: 0.9rem; background: var(--red); }
+.review-shapes i:nth-child(2) { border-radius: 0.9rem 0.9rem 0 0; background: var(--blue); }
+.review-shapes i:nth-child(3) { border-radius: 50%; background: var(--yellow); }
+.review-hunks { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.review-hunk { padding: 0.9rem 1rem 1.1rem; border-left: 1px solid var(--line); margin-left: -1px; }
+.review-head { display: block; margin-bottom: 0.6rem; color: var(--muted); font: 0.8125rem var(--font-mono); text-decoration: none; }
+.review-head:hover { color: var(--blue); text-decoration: underline; }
+.review-hunk p { position: relative; margin: 0; padding: 0.45rem 0.75rem 0.45rem 1.75rem; font: 0.9375rem/1.5 var(--font-mono); }
+.review-hunk p::before { position: absolute; left: 0.6rem; font-weight: 700; }
+.review-del { background: #f6d6cf; }
+.review-del::before { content: "−"; color: var(--red); }
+.review-del mark { color: var(--red); background-color: transparent; }
+.review-add { background: #e9eefb; }
+.review-add::before { content: "+"; color: var(--blue); }
+.review-add mark { --fix-color: #c9d6f5; }
+
+/* Пары «ошибка → исправление» на обложке и в «Типичных ошибках». Зачёркивание и подсветка — фон, а не
+   text-decoration: их ширину можно анимировать. */
+:is(.review-del, .compare-before) mark { background-image: linear-gradient(var(--red) 0 0); background-repeat: no-repeat; background-position: 0 55%; background-size: 100% 2px; }
+:is(.review-add, .compare-after .sentence) mark { color: var(--blue); font-weight: 700; background: linear-gradient(var(--fix-color, #e9eefb) 0 0) no-repeat 0 0 / 100% 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  /* Пара анимируется, только пока обе её фразы на экране (is-visible ставит скрипт); без скрипта всё сразу на месте.
+     Сначала зачёркивается ошибка, следом подсвечивается исправление. */
+  .compare { --pair-delay: 300ms; }
+  /* Обложку видно сразу при открытии страницы: пары идут после перехода между страницами, по очереди. */
+  .review-hunk { --pair-delay: 800ms; }
+  .review-hunk:nth-child(2) { --pair-delay: 1300ms; }
+  .review-hunk:nth-child(3) { --pair-delay: 1800ms; }
+  .motion-ready :is(.review-del, .compare-before) mark { animation: strike 450ms ease-in-out var(--pair-delay) both paused; }
+  .motion-ready :is(.review-add, .compare-after .sentence) mark { animation: fix 450ms ease-in-out calc(var(--pair-delay) + 450ms) both paused; }
+  .motion-ready:not(.motion-background) :is(.review-hunk, .compare).is-visible mark { animation-play-state: running; }
+}
+@keyframes strike { from { background-size: 0 2px; } }
+@keyframes fix { from { color: var(--ink); background-size: 0 100%; } }
 
 
 .project-name a { color: inherit; text-decoration: none; }
@@ -367,7 +397,6 @@ h2 {
 
 /* Прокрутка задаёт только целый этап, а промежуточные кадры проигрывает переход. */
 @property --scene-progress { syntax: '<number>'; inherits: true; initial-value: 0; }
-@property --motion-progress { syntax: '<number>'; inherits: true; initial-value: 0; }
 @property --scene-zoom { syntax: '<number>'; inherits: true; initial-value: 1; }
 
 @media (min-width: 64rem) and (min-height: 40rem) and (prefers-reduced-motion: no-preference) {
@@ -383,7 +412,6 @@ h2 {
   .motion-ready .scroll-scene figcaption p, .motion-ready .scroll-scene .step-formula code { font-size: 1em; }
   .motion-ready .scroll-scene :is(.scene-hint, .scene-step-label, .step-formula span) { font-size: 0.8125em; }
   .motion-ready .scroll-scene .art-title { font-size: 1.6em; }
-  .motion-ready [data-motion] { transition: --motion-progress calc(800ms * var(--playback, 1)) ease-out; }
   .motion-ready .scroll-scene .art-panel { position: sticky; top: 0; height: 100vh; justify-content: center; gap: 1.5rem; }
   /* Запас под последним шагом: пока его текст посередине экрана, картинка ещё закреплена целиком. */
   .motion-ready .scroll-scene figcaption { padding-bottom: 25vh; }
@@ -399,16 +427,8 @@ h2 {
   .motion-ready .continuous-scene .scene-step { min-height: 38vh; }
   .motion-ready .continuous-scene .scene-step.is-current .step-formula { border-color: var(--blue); }
   .motion-ready .continuous-scene .scene-step.is-current .step-formula code { color: var(--blue); font-weight: 700; }
-  .motion-ready .hero-redundant { opacity: calc(1 - var(--motion-progress, 0)); transform: translateY(calc(var(--motion-progress, 0) * -30px)) scale(calc(1 - var(--motion-progress, 0) * 0.15)); transform-origin: 462px 124px; }
-  .motion-ready .hero-entry { animation: art-assemble 650ms ease-out var(--entry-delay, 0ms) both; animation-play-state: paused; }
-  .motion-ready:not(.motion-background) .course-art.is-visible .hero-entry { animation-play-state: running; }
   .next-link span[aria-hidden] { transition: transform 160ms ease-out; }
-  .next-link:is(:hover, :focus-visible) span[aria-hidden] { transform: translateX(4px); }
-}
-
-@keyframes art-assemble {
-  from { transform: translateY(14px); }
-  to { transform: translateY(0); }
+  .next-link:is(:hover, :focus-visible) span[aria-hidden] { transform: translateX(-4px); }
 }
 
 h4 { margin: 2.5rem 0 0.8rem; font-size: 1.3rem; font-weight: 750; line-height: 1.35; letter-spacing: -0.015em; }
@@ -639,8 +659,7 @@ footer {
 /* Пары «Ошибка → Верно»: английская фраза вместо блока кода. */
 .sentence { margin: 0; padding: 1.2rem 1.25rem; font-size: 1.15rem; line-height: 1.5; }
 .sentence mark { padding: 0 0.15em; color: inherit; }
-.compare-before .sentence mark { background: #f6d6cf; text-decoration: line-through var(--red) 2px; }
-.compare-after .sentence mark { background: #e9eefb; color: var(--blue); font-weight: 700; }
+.compare-before .sentence mark { background-color: #f6d6cf; }
 .step-example { font-style: italic; }
 
 /* Урок 1: if-часть и главная часть отходят назад по времени, чем дальше ситуация от реальности.
@@ -675,7 +694,6 @@ footer {
 @media (max-width: 48rem) {
   body { padding-inline: 1rem; }
   .brand-row { flex-wrap: wrap; gap: 0.75rem 1.5rem; }
-  .hero .hero-art svg { display: none; }
   .hero-art .hero-art-caption { flex-direction: column; align-items: start; gap: 0.75rem; }
   .course-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-top: 2rem; }
   .course-sidebar { position: static; max-height: none; overflow: visible; padding: 0; border-right: 0; }
@@ -691,3 +709,19 @@ footer {
   .course-art--compact { grid-template-columns: 5rem minmax(0, 1fr); padding: 1rem 0; }
   .quiz-actions { flex-wrap: wrap; }
 }
+
+/* Переход между страницами (по мотивам exoape.com): новая страница въезжает снизу листом
+   с наклонным краем, старая уходит вверх медленнее и темнеет. Нативные View Transitions:
+   браузер без поддержки просто откроет страницу. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+}
+::view-transition { background: var(--ink); }
+::view-transition-old(root), ::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: 1s cubic-bezier(0.4, 0.2, 0.1, 1) both;
+}
+::view-transition-old(root) { animation-name: page-leave; }
+::view-transition-new(root) { animation-name: page-enter; }
+@keyframes page-leave { to { transform: translateY(-35%) rotate(-2deg); filter: brightness(0.4); } }
+@keyframes page-enter { from { transform: translateY(100%) rotate(2.5deg); } }
