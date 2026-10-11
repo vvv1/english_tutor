@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Английская грамматика на примерах из разработки и аналитики: схемы, типичные ошибки и самопроверка. Уровень B1–B2.">
+  <title>IT English Tutor</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="module" src="./course.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+    <symbol id="topic-symbol-1" viewBox="0 0 120 120">
+      <circle class="art-yellow" cx="36" cy="40" r="26"/>
+      <path class="art-line" d="M62 40h24v22"/>
+      <path class="art-blue" d="M50 108V86a36 36 0 0 1 72 0v22Z" transform="translate(-6 0)"/>
+      <rect class="art-red" x="10" y="80" width="24" height="24"/>
+    </symbol>
+  </svg>
+  <a class="skip-link" href="#course">Перейти к содержанию</a>
+  <header>
+    <div class="brand-row">
+      <p class="project-name"><a href="./" lang="en">IT English Tutor</a></p>
+      <p class="course-label">1 тема · 5 подтем</p>
+    </div>
+    <div class="hero">
+      <div class="hero-heading">
+        <p class="eyebrow">B1–B2 · Разработка и аналитика</p>
+        <h1>Английская грамматика</h1>
+      </div>
+      <div class="hero-intro">
+        <div class="hero-aside">
+          <p class="hero-audience">Сейчас доступна первая тема — <span lang="en">Conditionals</span>: пять подтем, от нулевого типа до смешанного.</p>
+          <a class="next-link" href="#conditionals">Начать курс <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-art course-art" data-motion="hero">
+        <svg viewBox="0 0 1200 236" aria-hidden="true" focusable="false">
+          <path class="hero-track" d="M172 124H1040"/>
+          <g class="hero-entry">
+            <rect class="art-yellow" x="0" y="24" width="224" height="192"/>
+            <text class="hero-svg-label" x="20" y="53">УСЛОВИЕ</text>
+            <g class="hero-row"><rect x="20" y="74" width="184" height="34"/><text x="34" y="96">if it fails</text></g>
+            <g class="hero-row"><rect x="20" y="119" width="184" height="34"/><text x="34" y="141">when it's ready</text></g>
+            <g class="hero-row"><rect x="20" y="164" width="184" height="34"/><text x="34" y="186">until it passes</text></g>
+          </g>
+          <g class="hero-redundant">
+            <circle class="art-red" cx="462" cy="124" r="88"/>
+            <text class="hero-svg-light hero-will" x="462" y="124" text-anchor="middle">will</text>
+            <path class="art-white-line" d="M418 114h88"/>
+            <text class="hero-svg-light" x="462" y="168" text-anchor="middle">Лишнее</text>
+          </g>
+          <g class="hero-entry" style="--entry-delay: 100ms">
+            <path class="art-blue" d="M666 216V112a88 88 0 0 1 176 0v104Z"/>
+            <text class="hero-code" x="754" y="120" text-anchor="middle">will + V</text>
+            <text class="hero-svg-light" x="754" y="174" text-anchor="middle">Следствие</text>
+          </g>
+          <g class="hero-entry" style="--entry-delay: 200ms">
+            <path class="art-paper" d="M1036 36h162v180h-162Z"/>
+            <text class="hero-code hero-code--card" x="1117" y="96" text-anchor="middle">if it fails,</text>
+            <text class="hero-code hero-code--card" x="1117" y="122" text-anchor="middle">we'll roll back</text>
+            <text class="hero-svg-label" x="1117" y="184" text-anchor="middle">ВЕРНО</text>
+          </g>
+          <path class="art-line" d="m636 114 10 10-10 10m370-20 10 10-10 10"/>
+          <circle class="art-yellow" cx="869" cy="42" r="12"/>
+        </svg>
+        <div class="hero-art-caption"><strong>«Если сборка упадёт» —<br><span lang="en">if the build fails.</span></strong><p>Условная схема: русское будущее время в условии не переносится в английский. После <span lang="en">if, when, until</span> лишнее <span lang="en">will</span> уходит — оно остаётся только в следствии.</p></div>
+      </div>
+    </div>
+  </header>
+  <div class="course-layout">
+    <aside class="course-sidebar" aria-label="Настройки и оглавление">
+      <noscript><p>Без JavaScript доступны все тексты и схемы. Отметки прочитанного и тест недоступны.</p></noscript>
+      <div id="reading-progress" hidden>
+        <p id="progress-status" role="status">Прочитано подтем: 0 из 5.</p>
+        <p id="storage-note">Подтема отмечается, когда вы дочитали её до конца. Отметки хранятся в этом браузере.</p>
+      </div>
+      <nav aria-label="Оглавление курса">
+        <h2>Оглавление</h2>
+        <ol class="toc">
+<li><a class="toc-lesson" href="#conditionals"><span class="toc-marker"><span class="toc-number">01</span><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg></span><span class="toc-title"><span lang="en">Conditionals</span>: условие и следствие</span></a>
+<ol class="toc-sub">
+<li><a href="#cond-zero"><span class="toc-sub-text"><span lang="en">Zero</span> <span class="toc-note">всегда так</span></span><span class="toc-check" data-read="cond-zero" hidden><span class="visually-hidden"> — прочитано</span></span></a></li>
+<li><a href="#cond-first"><span class="toc-sub-text"><span lang="en">First</span> <span class="toc-note">реальное будущее</span></span><span class="toc-check" data-read="cond-first" hidden><span class="visually-hidden"> — прочитано</span></span></a></li>
+<li><a href="#cond-second"><span class="toc-sub-text"><span lang="en">Second</span> <span class="toc-note">воображаемое сейчас</span></span><span class="toc-check" data-read="cond-second" hidden><span class="visually-hidden"> — прочитано</span></span></a></li>
+<li><a href="#cond-third"><span class="toc-sub-text"><span lang="en">Third</span> <span class="toc-note">упущенное прошлое</span></span><span class="toc-check" data-read="cond-third" hidden><span class="visually-hidden"> — прочитано</span></span></a></li>
+<li><a href="#cond-mixed"><span class="toc-sub-text"><span lang="en">Mixed</span> <span class="toc-note">прошлое и настоящее</span></span><span class="toc-check" data-read="cond-mixed" hidden><span class="visually-hidden"> — прочитано</span></span></a></li>
+</ol></li>
+<li><a class="toc-lesson" href="#quiz"><span class="toc-marker"><span class="toc-number">?</span></span><span class="toc-title">Итоговый тест</span></a></li>
+        </ol>
+      </nav>
+    </aside>
+    <main id="course" tabindex="-1">
+<section id="conditionals" class="topic" tabindex="-1" aria-labelledby="conditionals-title">
+<div class="lesson-heading">
+  <h2 id="conditionals-title"><span class="lesson-number">1.</span> <span class="lesson-title"><span lang="en">Conditionals</span>: условие и следствие</span></h2>
+  <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg>
+  <p class="lesson-thesis">Чем дальше ситуация от реальности, тем дальше назад сдвигается время глагола. Про будущее в <span lang="en">if</span>-части говорим настоящим временем, без <span lang="en">will</span>.</p>
+</div>
+<figure class="course-art scroll-scene continuous-scene cond-scene" data-stage="4">
+  <div class="art-panel">
+    <p class="art-index"><span>01</span> Шаг назад по времени — шаг от реальности.</p>
+    <svg viewBox="0 0 560 406" aria-hidden="true" focusable="false" lang="en">
+      <rect class="art-red" x="150" y="10" width="24" height="24"/>
+      <path class="art-blue" d="M298 34a14 14 0 0 1 28 0Z"/>
+      <circle class="art-yellow" cx="462" cy="22" r="12"/>
+      <text class="cond-head" x="162" y="54">УПУЩЕНО</text>
+      <text class="cond-head" x="312" y="54">ВООБРАЖАЕМО</text>
+      <text class="cond-head" x="462" y="54">РЕАЛЬНО</text>
+      <text class="cond-row-note" x="162" y="72" text-anchor="middle">два шага назад</text>
+      <text class="cond-row-note" x="312" y="72" text-anchor="middle">шаг назад</text>
+      <text class="cond-row-note" x="462" y="72" text-anchor="middle">без сдвига</text>
+      <path class="cond-divider" d="M240 84V256M390 84V256"/>
+      <text class="cond-row" x="12" y="126">IF</text>
+      <text class="cond-row-note" x="12" y="146">условие</text>
+      <text class="cond-row" x="12" y="216">MAIN</text>
+      <text class="cond-row-note" x="12" y="236">следствие</text>
+      <g class="cond-chip cond-chip--if">
+        <rect x="393" y="96" width="144" height="52"/>
+        <text x="465" y="128" data-at="0 1">Present</text>
+        <text x="465" y="128" data-at="2">Past</text>
+        <text x="465" y="128" data-at="3 4">had + V3</text>
+      </g>
+      <g class="cond-chip cond-chip--main">
+        <rect x="393" y="186" width="144" height="52"/>
+        <text x="465" y="218" data-at="0">Present</text>
+        <text x="465" y="218" data-at="1">will + V</text>
+        <text x="465" y="218" data-at="2 4">would + V</text>
+        <text x="465" y="218" data-at="3">would have + V3</text>
+      </g>
+      <path class="cond-divider" d="M12 270H548"/>
+      <g data-at="0">
+        <text class="cond-type" x="12" y="296">TYPE 0 · ZERO</text>
+        <text class="cond-sentence" x="12" y="324">If the cache <tspan class="cond-key">is</tspan> empty,</text>
+        <text class="cond-sentence" x="12" y="350">the app <tspan class="cond-key">queries</tspan> the database.</text>
+        <g class="cond-badge cond-badge--note"><rect x="12" y="366" width="250" height="32"/><text x="24" y="388">if = when: так каждый раз</text></g>
+      </g>
+      <g data-at="1">
+        <text class="cond-type" x="12" y="296">TYPE 1 · FIRST</text>
+        <text class="cond-sentence" x="12" y="324">If the build <tspan class="cond-key">fails</tspan>,</text>
+        <text class="cond-sentence" x="12" y="350">we <tspan class="cond-key">will roll back</tspan> the release.</text>
+        <g class="cond-badge"><rect x="12" y="366" width="260" height="32"/><text x="24" y="388">НЕ: If the build will fail</text></g>
+      </g>
+      <g data-at="2">
+        <text class="cond-type" x="12" y="296">TYPE 2 · SECOND</text>
+        <text class="cond-sentence" x="12" y="324">If we <tspan class="cond-key">had</tspan> more data,</text>
+        <text class="cond-sentence" x="12" y="350">the model <tspan class="cond-key">would be</tspan> more accurate.</text>
+        <g class="cond-badge"><rect x="12" y="366" width="296" height="32"/><text x="24" y="388">НЕ: If we would have more data</text></g>
+      </g>
+      <g data-at="3">
+        <text class="cond-type" x="12" y="296">TYPE 3 · THIRD</text>
+        <text class="cond-sentence" x="12" y="324">If we <tspan class="cond-key">had tested</tspan> the migration,</text>
+        <text class="cond-sentence" x="12" y="350">we <tspan class="cond-key">wouldn't have lost</tspan> the data.</text>
+        <g class="cond-badge"><rect x="12" y="366" width="270" height="32"/><text x="24" y="388">НЕ: If we would have tested</text></g>
+      </g>
+      <g data-at="4">
+        <text class="cond-type" x="12" y="296">MIXED · ПРОШЛОЕ → СЕЙЧАС</text>
+        <text class="cond-sentence" x="12" y="324">If we <tspan class="cond-key">had fixed</tspan> the bug yesterday,</text>
+        <text class="cond-sentence" x="12" y="350">the release <tspan class="cond-key">would be</tspan> ready now.</text>
+        <g class="cond-badge cond-badge--note"><rect x="12" y="366" width="296" height="32"/><text x="24" y="388">условие в прошлом, итог сейчас</text></g>
+      </g>
+      <circle class="art-blue" cx="551" cy="16" r="5"/>
+    </svg>
+    <p class="art-note">Учебная схема. V3 — третья форма глагола (<span lang="en">past participle</span>): <span lang="en">tested, lost, written</span>. Колонки показывают дистанцию от реальности, а не дату события.</p>
+  </div>
+  <figcaption><strong class="art-title">Пять типов условных предложений</strong>
+    <p class="scene-hint">Листайте, чтобы проследить, как обе части уходят назад по времени. Можно вернуться назад.</p>
+    <ol class="scene-steps">
+      <li class="scene-step"><span class="scene-step-label">01 / <span lang="en">Zero</span> — всегда так</span><p>Правило или факт, который срабатывает каждый раз. <span lang="en">If</span> можно заменить на <span lang="en">when</span>. Обе части — в <span lang="en">Present Simple</span>.</p><p class="step-example" lang="en">If the cache is empty, the app queries the database.</p><p class="step-formula"><span>Формула</span><code>If + Present, Present</code></p></li>
+      <li class="scene-step"><span class="scene-step-label">02 / <span lang="en">First</span> — реальное будущее</span><p>Конкретная ситуация, которая вполне может случиться. Будущее — только в главной части. По-русски «если сборка <em>упадёт</em>», но по-английски в условии <span lang="en">Present Simple</span>.</p><p class="step-example" lang="en">If the build fails, we'll roll back the release.</p><p class="step-formula"><span>Формула</span><code>If + Present, will + V</code></p></li>
+      <li class="scene-step"><span class="scene-step-label">03 / <span lang="en">Second</span> — воображаемое сейчас</span><p>Ситуация нереальна или маловероятна сейчас: данных мало. Обе части делают шаг назад: <span lang="en">Present → Past, will → would</span>. <span lang="en">Past</span> здесь означает не прошлое, а дистанцию от реальности.</p><p class="step-example" lang="en">If we had more data, the model would be more accurate.</p><p class="step-formula"><span>Формула</span><code>If + Past, would + V</code></p></li>
+      <li class="scene-step"><span class="scene-step-label">04 / <span lang="en">Third</span> — упущенное прошлое</span><p>Прошлое уже сложилось иначе: миграцию не протестировали, данные потеряли. Ещё шаг назад: <span lang="en">Past → Past Perfect, would → would have + V3</span>.</p><p class="step-example" lang="en">If we had tested the migration, we wouldn't have lost the data.</p><p class="step-formula"><span>Формула</span><code>If + had + V3, would have + V3</code></p></li>
+      <li class="scene-step"><span class="scene-step-label">05 / <span lang="en">Mixed</span> — прошлое влияет на сейчас</span><p>Условие относится к прошлому, следствие — к настоящему. <span lang="en">If</span>-часть остаётся на два шага назад, главная часть возвращается к <span lang="en">would + V</span>.</p><p class="step-example" lang="en">If we had fixed the bug yesterday, the release would be ready now.</p><p class="step-formula"><span>Формула</span><code>If + had + V3, would + V</code></p></li>
+    </ol>
+  </figcaption>
+</figure>
+<div class="table-scroll" tabindex="0" role="group" aria-labelledby="conditionals-table-caption"><table>
+<caption id="conditionals-table-caption">Пять типов условных предложений</caption>
+<thead><tr><th scope="col">Тип</th><th scope="col"><span lang="en">If</span>-часть</th><th scope="col">Главная часть</th><th scope="col">Значение</th></tr></thead><tbody>
+<tr><td lang="en"><a href="#cond-zero">Zero</a></td><td lang="en">Present Simple</td><td lang="en">Present Simple</td><td>всегда так, правило</td></tr>
+<tr><td lang="en"><a href="#cond-first">First</a></td><td lang="en">Present Simple</td><td lang="en">will + V</td><td>реально в будущем</td></tr>
+<tr><td lang="en"><a href="#cond-second">Second</a></td><td lang="en">Past Simple</td><td lang="en">would + V</td><td>воображаемо сейчас</td></tr>
+<tr><td lang="en"><a href="#cond-third">Third</a></td><td lang="en">had + V3</td><td lang="en">would have + V3</td><td>иначе в прошлом</td></tr>
+<tr><td lang="en"><a href="#cond-mixed">Mixed</a></td><td lang="en">had + V3</td><td lang="en">would + V</td><td>прошлое → сейчас</td></tr>
+</tbody></table></div>
+<p><strong>Порядок частей одинаков для всех типов.</strong> Если условие стоит первым, после него ставится запятая. Если первой идёт главная часть, запятая не нужна: <span lang="en">We'll roll back if the build fails.</span></p>
+
+<section id="cond-zero" class="subtopic" tabindex="-1" aria-labelledby="cond-zero-title">
+<div class="subtopic-heading">
+  <span class="subtopic-number" aria-hidden="true">0</span>
+  <h3 id="cond-zero-title"><span lang="en">Zero conditional</span>: всегда так</h3>
+  <p>Правило или факт, который срабатывает каждый раз. Обе части — в <span lang="en">Present Simple</span>.</p>
+</div>
+<p class="step-formula"><span>Формула</span><code>If + Present, Present</code></p>
+<p>Так описывают поведение системы, которое не зависит от конкретного дня: документация, README, ответы поддержки. <span lang="en">If</span> можно заменить на <span lang="en">when</span> или <span lang="en">whenever</span> — смысл не изменится.</p>
+<ul lang="en">
+<li>If the cache is empty, the app queries the database.</li>
+<li>If a request takes longer than 30 seconds, the gateway returns 504.</li>
+<li>When the disk is full, the service stops writing logs.</li>
+</ul>
+<p>В инструкциях главная часть часто повелительная: <span lang="en">If the build fails, check the logs.</span></p>
+
+<div class="lesson-limit">
+<h4>Когда нужен не нулевой, а первый тип</h4>
+<p>Нулевой тип — про то, что происходит <em>каждый раз</em>. Если речь об одной конкретной ситуации в будущем, нужен первый тип с <span lang="en">will</span>: <span lang="en">If the cache is empty after tonight's deploy, we'll warm it up manually.</span></p>
+<p>Проверка: подходит ли по-русски «всякий раз, когда»? Если да — нулевой тип.</p>
+</div>
+</section>
+
+<section id="cond-first" class="subtopic" tabindex="-1" aria-labelledby="cond-first-title">
+<div class="subtopic-heading">
+  <span class="subtopic-number" aria-hidden="true">1</span>
+  <h3 id="cond-first-title"><span lang="en">First conditional</span>: реальное будущее</h3>
+  <p>Конкретная ситуация, которая вполне может случиться. Будущее — только в главной части.</p>
+</div>
+<p class="step-formula"><span>Формула</span><code>If + Present, will + V</code></p>
+<p>По-русски «если сборка <em>упадёт</em>, мы <em>откатим</em> релиз» — будущее время в обеих частях. По-английски в условии остаётся <span lang="en">Present Simple</span>, а <span lang="en">will</span> стоит только в следствии. Так обсуждают планы и риски на стендапе: что сделаем, если тесты упадут или релиз сдвинется.</p>
+<ul lang="en">
+<li>If the build fails, we'll roll back the release.</li>
+<li>If the tests pass, I'll merge the PR tonight.</li>
+<li>We'll miss the deadline if the API isn't ready by Friday.</li>
+</ul>
+
+<h4>Типичные ошибки</h4>
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> Будущее в условии</h4>
+<p class="sentence" lang="en">If the tests <mark>will pass</mark>, we will merge the PR.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p>Калька с русского «если тесты <em>пройдут</em>». В <span lang="en">if</span>-части первого типа — <span lang="en">Present Simple</span>, <span lang="en">will</span> — только в главной части. То же правило действует после <span lang="en">when, as soon as, before, after, until</span>: <span lang="en">When the release is out, we'll update the docs.</span></p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">Present Simple</span> в условии</h4>
+<p class="sentence" lang="en">If the tests <mark>pass</mark>, we'll merge the PR.</p>
+</div>
+</div>
+
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> Двойное отрицание с <span lang="en">unless</span></h4>
+<p class="sentence" lang="en">Unless you <mark>don't have</mark> access, ask the admin.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p><span lang="en">Unless</span> уже означает <span lang="en">if not</span> — «если не». С ещё одним отрицанием фраза говорит обратное: «если у вас <em>есть</em> доступ, спросите администратора».</p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">Unless</span> без второго <span lang="en">not</span></h4>
+<p class="sentence" lang="en">Unless you <mark>have</mark> access, ask the admin.</p>
+</div>
+</div>
+
+<div class="lesson-limit">
+<h4>Когда <span lang="en">will</span> после <span lang="en">if</span> всё-таки уместен</h4>
+<p><strong><span lang="en">If</span> в значении «ли».</strong> В косвенном вопросе <span lang="en">if</span> — не условие, а «ли», и будущее время в нём обычное: <span lang="en">I'm not sure if the fix will work.</span> — «Не уверен, сработает ли исправление». Проверка простая: если по-русски получается «ли», <span lang="en">will</span> нужен.</p>
+<p><strong>Готовность или вежливая просьба.</strong> <span lang="en">Will</span> означает «согласны ли вы»: <span lang="en">If you will wait a moment, I'll check the logs.</span></p>
+<p><strong>Следствие самого условия.</strong> Результат наступит позже решения: <span lang="en">If it will save us a week, let's buy the license.</span> — «если это (в итоге) сэкономит нам неделю».</p>
+<p>Во всех остальных случаях действует правило из формулы: в условии про будущее — <span lang="en">Present Simple</span>.</p>
+</div>
+
+<details>
+<summary>Подробности: <span lang="en">when</span> или <span lang="en">if</span>, формальный стиль<span class="visually-hidden"> — First conditional</span></summary>
+<p><strong><span lang="en">When</span> или <span lang="en">if</span>.</strong> <span lang="en">When</span> — уверены, что событие произойдёт: <span lang="en">When the release is out…</span> <span lang="en">If</span> — может и не произойти: <span lang="en">If the release slips…</span></p>
+<p><strong>Формальная инверсия.</strong> В официальных письмах и документации <span lang="en">if</span> иногда опускают и начинают с <span lang="en">should</span>: <span lang="en">Should you have any questions, contact support.</span></p>
+</details>
+</section>
+
+<section id="cond-second" class="subtopic" tabindex="-1" aria-labelledby="cond-second-title">
+<div class="subtopic-heading">
+  <span class="subtopic-number" aria-hidden="true">2</span>
+  <h3 id="cond-second-title"><span lang="en">Second conditional</span>: воображаемое сейчас</h3>
+  <p>Ситуация нереальна или маловероятна сейчас. Обе части делают шаг назад: <span lang="en">Present → Past, will → would</span>.</p>
+</div>
+<p class="step-formula"><span>Формула</span><code>If + Past, would + V</code></p>
+<p><span lang="en">Past</span> здесь означает не прошлое, а дистанцию от реальности: данных у нас мало, но представим, что больше. Так формулируют гипотезы и советы — что было бы при других ресурсах или на месте коллеги.</p>
+<ul lang="en">
+<li>If we had more data, the model would be more accurate.</li>
+<li>If I were you, I'd refactor this module.</li>
+<li>If the service didn't depend on the legacy API, we could deploy it daily.</li>
+</ul>
+
+<h4>Типичные ошибки</h4>
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> <span lang="en">Would</span> в обеих частях</h4>
+<p class="sentence" lang="en">If I <mark>would have</mark> admin rights, I would fix it myself.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p>По-русски «бы» стоит в обеих частях: «если бы у меня <em>были</em> права, я бы исправил». В английском <span lang="en">would</span> — только в главной части, а условие второго типа — в <span lang="en">Past Simple</span>.</p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">Past Simple</span> в условии</h4>
+<p class="sentence" lang="en">If I <mark>had</mark> admin rights, I'd fix it myself.</p>
+</div>
+</div>
+
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> Совет через «на твоём месте»</h4>
+<p class="sentence" lang="en">If I <mark>am</mark> you, I would refactor this module.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p>Оказаться на месте собеседника нельзя — это воображаемая ситуация, второй тип. Устойчивая форма — <span lang="en">were</span> для всех лиц. <span lang="en">If I was you</span> встречается в разговорной речи, но <span lang="en">were</span> звучит нейтрально в любом контексте.</p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">If I were you</span></h4>
+<p class="sentence" lang="en">If I <mark>were</mark> you, I'd refactor this module.</p>
+</div>
+</div>
+
+<div class="lesson-limit">
+<h4>Первый или второй тип — решает говорящий</h4>
+<p>Одна и та же ситуация может быть реальной или маловероятной — всё зависит от того, как вы её оцениваете. <span lang="en">If we get the budget, we'll hire two engineers.</span> — бюджет вполне могут дать. <span lang="en">If we got the budget, we'd hire two engineers.</span> — шансы невелики.</p>
+</div>
+
+<details>
+<summary>Подробности: <span lang="en">could</span> и <span lang="en">might</span> вместо <span lang="en">would</span><span class="visually-hidden"> — Second conditional</span></summary>
+<p><span lang="en">If we had more time, we could add integration tests</span> — «смогли бы». <span lang="en">If we had more time, we might add them</span> — «возможно, добавили бы».</p>
+</details>
+</section>
+
+<section id="cond-third" class="subtopic" tabindex="-1" aria-labelledby="cond-third-title">
+<div class="subtopic-heading">
+  <span class="subtopic-number" aria-hidden="true">3</span>
+  <h3 id="cond-third-title"><span lang="en">Third conditional</span>: упущенное прошлое</h3>
+  <p>Прошлое уже сложилось иначе. Ещё шаг назад: <span lang="en">Past → Past Perfect, would → would have + V3</span>.</p>
+</div>
+<p class="step-formula"><span>Формула</span><code>If + had + V3, would have + V3</code></p>
+<p>Язык разборов инцидентов (<span lang="en">postmortem</span>): что пошло бы иначе, если бы команда поступила по-другому. Утвердительное условие означает, что в реальности действия не было: <span lang="en">had tested</span> — миграцию не протестировали.</p>
+<ul lang="en">
+<li>If we had tested the migration, we wouldn't have lost the data.</li>
+<li>If the alert had fired, the on-call engineer would have reacted in minutes.</li>
+<li>We could have avoided the outage if we had checked the config.</li>
+</ul>
+
+<h4>Типичная ошибка</h4>
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> <span lang="en">Would have</span> в условии</h4>
+<p class="sentence" lang="en">If we <mark>would have checked</mark> the logs, we would have found the bug.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p>В третьем типе условие — <span lang="en">had + V3</span>. Форма <span lang="en">if … would have</span> встречается в разговорной американской речи, но в письменной работе и в постмортеме её считают ошибкой.</p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">Past Perfect</span> в условии</h4>
+<p class="sentence" lang="en">If we <mark>had checked</mark> the logs, we'd have found the bug.</p>
+</div>
+</div>
+
+<details>
+<summary>Подробности: сокращение <span lang="en">'d</span>, формальный стиль<span class="visually-hidden"> — Third conditional</span></summary>
+<p><strong>Сокращение <span lang="en">'d</span>.</strong> <span lang="en">I'd</span> — это <span lang="en">I would</span> или <span lang="en">I had</span>. В <span lang="en">If I'd known about the outage, I'd have told you</span> первое <span lang="en">'d</span> — <span lang="en">had</span> (сразу после <span lang="en">if</span>), второе — <span lang="en">would</span> (перед <span lang="en">have</span> + V3).</p>
+<p><strong>Формальная инверсия.</strong> В официальных письмах <span lang="en">if</span> опускают и начинают с <span lang="en">had</span>: <span lang="en">Had we known about the issue, we would have notified customers.</span></p>
+</details>
+</section>
+
+<section id="cond-mixed" class="subtopic" tabindex="-1" aria-labelledby="cond-mixed-title">
+<div class="subtopic-heading">
+  <span class="subtopic-number" aria-hidden="true">M</span>
+  <h3 id="cond-mixed-title"><span lang="en">Mixed conditional</span>: прошлое и настоящее</h3>
+  <p>Условие и следствие относятся к разному времени, и каждая часть берёт форму своего типа.</p>
+</div>
+<p class="step-formula"><span>Прошлое → сейчас</span><code>If + had + V3, would + V</code></p>
+<p>Самый частый вариант. Условие в прошлом, как в третьем типе; следствие в настоящем, как во втором. Так объясняют, почему система сейчас в таком состоянии.</p>
+<ul lang="en">
+<li>If we had fixed the bug yesterday, the release would be ready now.</li>
+<li>If we hadn't skipped the code review, we wouldn't be debugging this in production.</li>
+</ul>
+<p class="step-formula"><span>Сейчас → прошлое</span><code>If + Past, would have + V3</code></p>
+<p>Обратное направление: воображаемое постоянное положение дел (второй тип) объясняет прошлый результат (третий тип).</p>
+<ul lang="en">
+<li>If we had proper monitoring, we would have noticed the outage earlier.</li>
+<li>If I weren't on call this week, I would have joined the offsite.</li>
+</ul>
+<p>В первом примере <span lang="en">had</span> — <span lang="en">Past Simple</span> глагола <span lang="en">have</span>: нормального мониторинга нет и сейчас. Это не <span lang="en">Past Perfect</span>.</p>
+
+<h4>Типичная ошибка</h4>
+<div class="compare">
+<div class="compare-example compare-before">
+<h4><span class="compare-label">Ошибка</span> Следствие ушло в прошлое</h4>
+<p class="sentence" lang="en">If we had fixed the bug yesterday, the release <mark>would have been</mark> ready now.</p>
+</div>
+<div class="compare-work">
+<h4>Почему</h4>
+<p>Третий тип по инерции: обе части отправлены в прошлое. Но <span lang="en">now</span> говорит, что следствие — в настоящем, поэтому главная часть возвращается к <span lang="en">would + V</span>.</p>
+</div>
+<div class="compare-example compare-after">
+<h4><span class="compare-label">Верно</span> <span lang="en">Would + V</span> для настоящего</h4>
+<p class="sentence" lang="en">If we had fixed the bug yesterday, the release <mark>would be</mark> ready now.</p>
+</div>
+</div>
+</section>
+</section>
+
+<section id="quiz" tabindex="-1" aria-labelledby="quiz-title">
+<h2 id="quiz-title">Итоговый тест</h2>
+<figure class="course-art course-art--compact">
+  <svg viewBox="0 0 200 160" aria-hidden="true" focusable="false">
+    <circle class="art-blue" cx="65" cy="80" r="47"/>
+    <path class="art-white-line" d="M51 62a14 14 0 1 1 20 13l-6 5v10M65 101v5"/>
+    <rect class="art-paper" x="131" y="36" width="24" height="24"/><rect class="art-yellow" x="131" y="68" width="24" height="24"/><rect class="art-paper" x="131" y="100" width="24" height="24"/>
+    <circle class="art-red" cx="179" cy="30" r="8"/>
+  </svg>
+  <figcaption><strong class="art-title">Проверьте ход рассуждений</strong>
+    <p>Насколько ситуация далека от реальности? Где условие, а где следствие? Нужен ли <span lang="en">will</span>?</p>
+    <p class="art-note">Иллюстрация к самопроверке, а не экзамену.</p>
+  </figcaption>
+</figure>
+<p>9 вопросов по теме <span lang="en">Conditionals</span>. В одних вопросах один правильный ответ, в других — несколько: тип указан у каждого вопроса. Балл начисляется только за точный выбор — без лишних и пропущенных вариантов. Правильные ответы и объяснения появятся после завершения; пройти тест можно сколько угодно раз.</p>
+<p class="notice">Это самопроверка, а не экзамен: правильные ответы есть в коде страницы. Отметки подтем и последний результат хранятся только в этом браузере — они не переносятся на другие устройства и пропадут при очистке данных сайта.</p>
+<p id="quiz-last" hidden></p>
+<noscript><p class="notice">Тест проверяет ответы в браузере и требует JavaScript. Тексты тем доступны без него.</p></noscript>
+<form id="quiz-form" hidden novalidate>
+<div id="quiz-result" class="quiz-result" tabindex="-1" hidden>
+  <p class="eyebrow">Результат</p>
+  <p class="quiz-score"><strong id="quiz-score"></strong></p>
+  <p>Балл засчитан только за точный выбор вариантов. Под каждым вопросом — правильные варианты и объяснение.</p>
+  <button type="button" class="quiz-button" data-quiz-retry>Пройти заново</button>
+</div>
+<ol class="quiz-questions">
+<li class="quiz-question" id="question-1">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-first"><span lang="en">First conditional</span></a></p>
+<fieldset data-answer="b">
+  <legend><span class="quiz-kind">Вопрос 1 · Один ответ</span> <span lang="en">If the deployment ___, we'll roll back.</span></legend>
+  <label><input type="radio" name="question-1" value="a"> <span lang="en">will fail</span></label>
+  <label><input type="radio" name="question-1" value="b"> <span lang="en">fails</span></label>
+  <label><input type="radio" name="question-1" value="c"> <span lang="en">would fail</span></label>
+  <label><input type="radio" name="question-1" value="d"> <span lang="en">failed</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Реальная ситуация в будущем — первый тип. Будущее показывает <span lang="en">will</span> в главной части, а в условии — <span lang="en">Present Simple</span>: <span lang="en">fails</span>.</p></div>
+</li>
+<li class="quiz-question" id="question-2">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-second"><span lang="en">Second conditional</span></a></p>
+<fieldset data-answer="a">
+  <legend><span class="quiz-kind">Вопрос 2 · Один ответ</span> GPU не хватает. Как сказать «если бы у нас было больше GPU, обучение шло бы быстрее»? <span lang="en">If we ___ more GPUs, training ___ faster.</span></legend>
+  <label><input type="radio" name="question-2" value="a"> <span lang="en">had / would be</span></label>
+  <label><input type="radio" name="question-2" value="b"> <span lang="en">have / would be</span></label>
+  <label><input type="radio" name="question-2" value="c"> <span lang="en">would have / would be</span></label>
+  <label><input type="radio" name="question-2" value="d"> <span lang="en">had / will be</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Воображаемое настоящее — второй тип: обе части на шаг назад. Условие — <span lang="en">Past Simple</span> (<span lang="en">had</span>), следствие — <span lang="en">would + V</span>. <span lang="en">Would</span> в условии и <span lang="en">will</span> в следствии здесь не подходят.</p></div>
+</li>
+<li class="quiz-question" id="question-3">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#conditionals">Все типы</a></p>
+<fieldset data-answer="a c e">
+  <legend><span class="quiz-kind">Вопрос 3 · Несколько ответов</span> Какие предложения грамматически верны?</legend>
+  <label><input type="checkbox" name="question-3" value="a"> <span lang="en">If I were you, I'd write the tests first.</span></label>
+  <label><input type="checkbox" name="question-3" value="b"> <span lang="en">If we would have known, we would have warned you.</span></label>
+  <label><input type="checkbox" name="question-3" value="c"> <span lang="en">If the API returns 500, the client retries the request.</span></label>
+  <label><input type="checkbox" name="question-3" value="d"> <span lang="en">If you will need help tomorrow, ping me.</span></label>
+  <label><input type="checkbox" name="question-3" value="e"> <span lang="en">Unless the job fails, nobody gets paged.</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Верны совет через <span lang="en">If I were you</span>, правило нулевого типа и <span lang="en">unless</span> без второго отрицания. В варианте про знание нужно <span lang="en">If we had known</span>, а в варианте про помощь — <span lang="en">If you need help</span>: это условие о будущем, а не просьба о готовности.</p></div>
+</li>
+<li class="quiz-question" id="question-4">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-third"><span lang="en">Third conditional</span></a></p>
+<fieldset data-answer="b">
+  <legend><span class="quiz-kind">Вопрос 4 · Один ответ</span> <span lang="en">If we had backed up the database, we wouldn't have lost the data.</span> Что произошло на самом деле?</legend>
+  <label><input type="radio" name="question-4" value="a"> <span>Резервную копию сделали, данные сохранились.</span></label>
+  <label><input type="radio" name="question-4" value="b"> <span>Резервную копию не сделали, данные потеряны.</span></label>
+  <label><input type="radio" name="question-4" value="c"> <span>Резервную копию, возможно, сделают позже.</span></label>
+  <label><input type="radio" name="question-4" value="d"> <span>Копия есть, но данные всё равно потеряны.</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Третий тип описывает прошлое, которое сложилось иначе. Утвердительное условие означает, что в реальности действия не было, отрицательное следствие — что результат наступил: копии нет, данные потеряны.</p></div>
+</li>
+<li class="quiz-question" id="question-5">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-mixed"><span lang="en">Mixed conditional</span></a></p>
+<fieldset data-answer="a">
+  <legend><span class="quiz-kind">Вопрос 5 · Один ответ</span> Год назад вы отказались от оффера в Лондоне. <span lang="en">If I had accepted that offer, I ___ in London now.</span></legend>
+  <label><input type="radio" name="question-5" value="a"> <span lang="en">would be living</span></label>
+  <label><input type="radio" name="question-5" value="b"> <span lang="en">would have lived</span></label>
+  <label><input type="radio" name="question-5" value="c"> <span lang="en">will live</span></label>
+  <label><input type="radio" name="question-5" value="d"> <span lang="en">lived</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Смешанный тип: условие в прошлом (<span lang="en">had accepted</span>), следствие сейчас — на это указывает <span lang="en">now</span>. Главная часть возвращается к <span lang="en">would + V</span>; длительная форма <span lang="en">would be living</span> подчёркивает текущее состояние. <span lang="en">Would have lived</span> отнесло бы следствие в прошлое.</p></div>
+</li>
+<li class="quiz-question" id="question-6">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-third"><span lang="en">Third conditional</span></a></p>
+<fieldset data-answer="c">
+  <legend><span class="quiz-kind">Вопрос 6 · Один ответ</span> <span lang="en">If I'd known about the outage, I'd have told you.</span> Что означают первое и второе <span lang="en">'d</span>?</legend>
+  <label><input type="radio" name="question-6" value="a"> <span>Оба — <span lang="en">would</span></span></label>
+  <label><input type="radio" name="question-6" value="b"> <span>Оба — <span lang="en">had</span></span></label>
+  <label><input type="radio" name="question-6" value="c"> <span>Первое — <span lang="en">had</span>, второе — <span lang="en">would</span></span></label>
+  <label><input type="radio" name="question-6" value="d"> <span>Первое — <span lang="en">would</span>, второе — <span lang="en">had</span></span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Третий тип: <span lang="en">If I had known…, I would have told you.</span> Сразу после <span lang="en">if</span> сокращение почти всегда означает <span lang="en">had</span>; перед <span lang="en">have</span> + V3 — <span lang="en">would</span>.</p></div>
+</li>
+<li class="quiz-question" id="question-7">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-first"><span lang="en">First conditional</span></a></p>
+<fieldset data-answer="a">
+  <legend><span class="quiz-kind">Вопрос 7 · Один ответ</span> Релиз точно выходит в пятницу. Какое начало точнее передаёт уверенность? <span lang="en">___ the release is out, we'll update the docs.</span></legend>
+  <label><input type="radio" name="question-7" value="a"> <span lang="en">When</span></label>
+  <label><input type="radio" name="question-7" value="b"> <span lang="en">If</span></label>
+  <label><input type="radio" name="question-7" value="c"> <span lang="en">Unless</span></label>
+  <label><input type="radio" name="question-7" value="d"> <span lang="en">In case</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p><span lang="en">When</span> — событие точно произойдёт, вопрос только во времени. <span lang="en">If</span> грамматически возможен, но добавляет сомнение: релиз может и не выйти. <span lang="en">Unless</span> меняет смысл на «если не», <span lang="en">in case</span> — «на случай, если».</p></div>
+</li>
+<li class="quiz-question" id="question-8">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-first"><span lang="en">First conditional</span></a></p>
+<fieldset data-answer="a c">
+  <legend><span class="quiz-kind">Вопрос 8 · Несколько ответов</span> В каких предложениях <span lang="en">will</span> после <span lang="en">if</span> уместен?</legend>
+  <label><input type="checkbox" name="question-8" value="a"> <span lang="en">I'm not sure if the hotfix will work.</span></label>
+  <label><input type="checkbox" name="question-8" value="b"> <span lang="en">If the server will crash, we'll get an alert.</span></label>
+  <label><input type="checkbox" name="question-8" value="c"> <span lang="en">If you will wait a moment, I'll check the logs.</span></label>
+  <label><input type="checkbox" name="question-8" value="d"> <span lang="en">If the release will slip, we'll tell the client.</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>В первом варианте <span lang="en">if</span> значит «ли» — это косвенный вопрос, а не условие. В варианте с ожиданием <span lang="en">will</span> выражает готовность собеседника. Варианты про падение сервера и сдвиг релиза — обычные условия о будущем: <span lang="en">If the server crashes…, If the release slips…</span></p></div>
+</li>
+<li class="quiz-question" id="question-9">
+<p class="quiz-meta"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#topic-symbol-1"/></svg><a href="#cond-second"><span lang="en">Second conditional</span></a></p>
+<fieldset data-answer="a c">
+  <legend><span class="quiz-kind">Вопрос 9 · Несколько ответов</span> Какие предложения описывают воображаемое <em>настоящее</em>?</legend>
+  <label><input type="checkbox" name="question-9" value="a"> <span lang="en">If I had admin rights, I'd fix it myself.</span></label>
+  <label><input type="checkbox" name="question-9" value="b"> <span lang="en">If I get admin rights, I'll fix it myself.</span></label>
+  <label><input type="checkbox" name="question-9" value="c"> <span lang="en">If I were on that team, I'd suggest Kafka.</span></label>
+  <label><input type="checkbox" name="question-9" value="d"> <span lang="en">If I had had admin rights, I'd have fixed it.</span></label>
+</fieldset>
+<div class="quiz-feedback" hidden><p class="quiz-verdict"></p><p>Второй тип — <span lang="en">Past Simple</span> в условии и <span lang="en">would + V</span>: права администратора и участие в команде воображаемые. Вариант с <span lang="en">get</span> — реальная возможность в будущем (первый тип), с <span lang="en">had had</span> — упущенное прошлое (третий тип).</p></div>
+</li>
+</ol>
+<p id="quiz-skipped" class="notice" role="alert" hidden></p>
+<div class="quiz-actions">
+  <button type="submit" class="quiz-button quiz-submit">Завершить тест</button>
+  <button type="button" class="quiz-button" data-quiz-retry hidden>Пройти заново</button>
+</div>
+</form>
+<p class="quiz-back"><a href="#conditionals">Вернуться к началу темы</a></p>
+</section>
+    </main>
+  </div>
+  <footer><p><span lang="en">IT English Tutor</span> · Компании, системы и события в примерах вымышлены.</p></footer>
+</body>
+</html>
