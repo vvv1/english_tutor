@@ -4,7 +4,7 @@ const STORAGE_KEY = 'it-english-tutor';
 const subtopics = [...document.querySelectorAll('.subtopic')];
 const lessonIds = subtopics.map(section => section.id);
 const questions = [...document.querySelectorAll('.quiz-question')];
-const progressStatus = document.querySelector('#progress-status');
+const readingProgress = document.querySelector('#reading-progress');
 const storageNote = document.querySelector('#storage-note');
 let saved = { lessons: [], quiz: null };
 try {
@@ -25,12 +25,11 @@ function save() {
 function markRead(lesson) {
   completed.add(lesson);
   document.querySelector(`[data-read="${lesson}"]`).hidden = false;
-  progressStatus.textContent = `Прочитано подтем: ${completed.size} из ${lessonIds.length}.`;
-  progressStatus.parentElement.style.setProperty('--read', completed.size / lessonIds.length);
+  readingProgress.style.setProperty('--read', completed.size / lessonIds.length);
 }
 
 saved.lessons.forEach(markRead);
-document.querySelector('#reading-progress').hidden = false;
+readingProgress.hidden = false;
 // Подтема прочитана, когда её конец показался на экране: в конец секции добавляется пустая метка.
 const readEnds = new IntersectionObserver(entries => {
   for (const entry of entries) {
